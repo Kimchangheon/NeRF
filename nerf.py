@@ -1,3 +1,22 @@
+def parse_args():
+    parser = argparse.ArgumentParser(description='NeRF')
+    parser.add_argument('--train_data_dir', type=str, default="", help='train data directory')
+    parser.add_argument('--batch_size', type=int, default=1, help='input batch size for training (default: 64)')
+    parser.add_argument('--epochs', type=int, default=1000, help='number of epochs to train (default: 5)')
+    parser.add_argument('--lr', type=float, default=0.003, help='learning rate (default: 0.003)')
+    # parser.add_argument('--momentum', type=float, default=0.9, help='SGD momentum (default: 0.9)')
+    parser.add_argument('--no_cuda', action='store_true', default=False, help='disables CUDA training')
+    # parser.add_argument('--seed', type=int, default=1, help='random seed (default: 1)')
+    parser.add_argument('--log_interval', type=int, default=100, help='how many batches to wait before logging training status')
+    parser.add_argument('--save_model', action='store_true', default=False, help='For Saving the current Model')
+    parser.add_argument('--run_name', type=str, default="No_mask_D_in_CrossRention_0_Recurrent_inference")
+    parser.add_argument('--mode', type=str, default="inference_on_valid", help='train or valid ')
+    parser.add_argument('--img_width', type=int, default=420, help='img_width')
+    parser.add_argument('--img_height', type=int, default=28, help='img_height')
+    return parser.parse_args()
+
+args = parse_args()
+
 import torch
 import numpy as np
 from tqdm import tqdm
@@ -141,8 +160,8 @@ def train(nerf_model, optimizer, scheduler, data_loader, device='cpu', hn=0, hf=
 if __name__ == '__main__':
     device = 'cuda'
     
-    training_dataset = torch.from_numpy(np.load('training_data.pkl', allow_pickle=True))
-    testing_dataset = torch.from_numpy(np.load('testing_data.pkl', allow_pickle=True))
+    training_dataset = torch.from_numpy(np.load(args.train_data_dir+'training_data.pkl', allow_pickle=True))
+    testing_dataset = torch.from_numpy(np.load(args.train_data_dir+'testing_data.pkl', allow_pickle=True))
     model = NerfModel(hidden_dim=256).to(device)
     model_optimizer = torch.optim.Adam(model.parameters(), lr=5e-4)
     scheduler = torch.optim.lr_scheduler.MultiStepLR(model_optimizer, milestones=[2, 4, 8], gamma=0.5)
