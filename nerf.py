@@ -1,3 +1,4 @@
+import argparse
 def parse_args():
     parser = argparse.ArgumentParser(description='NeRF')
     parser.add_argument('--train_data_dir', type=str, default="", help='train data directory')
