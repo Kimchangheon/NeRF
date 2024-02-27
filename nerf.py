@@ -1,7 +1,7 @@
 import argparse
 def parse_args():
     parser = argparse.ArgumentParser(description='NeRF')
-    parser.add_argument('--train_data_dir', type=str, default="", help='train data directory')
+    parser.add_argument('--train_data_dir', type=str, default="/proj/ciptmp/no12neni/NeRF/", help='train data directory')
     parser.add_argument('--batch_size', type=int, default=1, help='input batch size for training (default: 64)')
     parser.add_argument('--epochs', type=int, default=1000, help='number of epochs to train (default: 5)')
     parser.add_argument('--lr', type=float, default=0.003, help='learning rate (default: 0.003)')
@@ -138,8 +138,9 @@ def render_rays(nerf_model, ray_origins, ray_directions, hn=0, hf=0.5, nb_bins=1
 def train(nerf_model, optimizer, scheduler, data_loader, device='cpu', hn=0, hf=1, nb_epochs=int(1e5),
           nb_bins=192, H=400, W=400):
     training_loss = []
-    for _ in tqdm(range(nb_epochs)):
-        for batch in data_loader:
+    for epoch in range(nb_epochs):
+        print(f"epochs : {epoch}")
+        for batch in tqdm(data_loader):
             ray_origins = batch[:, :3].to(device)
             ray_directions = batch[:, 3:6].to(device)
             ground_truth_px_values = batch[:, 6:].to(device)
