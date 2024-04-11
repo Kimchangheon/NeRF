@@ -1,6 +1,3 @@
-Please organize this lecture script preserving all content with same.
-
-
 # A Review of 3D reconstruction(3D model generation)technique for various anthropometric body part.
 # Abstract
 
