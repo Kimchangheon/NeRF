@@ -16,6 +16,13 @@ dirs = np.stack((u - W / 2,
                  -(v - H / 2),
                  - np.ones_like(u) * f), axis=-1)
 rays_d = dirs / np.linalg.norm(dirs, axis=-1, keepdims=True)
+
+# rays_d.shape
+# Out[2]: (400, 400, 3)
+
+# rays_d[0][0][0]**2 +rays_d[0][0][1]**2+rays_d[0][0][2]**2
+# Out[4]: 1.0
+
 rays_d = rays_d.reshape(-1, 3)
 print()
 

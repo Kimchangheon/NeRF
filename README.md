@@ -1,3 +1,6 @@
+Please organize this lecture script preserving all content with same.
+
+
 # NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
 
 #### Code from the course [Introduction to NeRF, volumetric rendering, and 3D reconstruction](https://www.udemy.com/course/neural-radiance-fields-nerf/?referralCode=DD33817D57404AF048DF).
