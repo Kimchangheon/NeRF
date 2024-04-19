@@ -31,8 +31,7 @@ class Voxels(nn.Module):
         colors_and_densities[cond, -1] = self.voxels[indx, indy, indz, -1]
          
         return torch.sigmoid(colors_and_densities[:, :3]), torch.relu(colors_and_densities[:, -1:])
-        
-    
+
     def intersect(self, x, d):
         return self.forward(x, d)
     
