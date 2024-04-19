@@ -2,8 +2,8 @@
 # A Review of 3D reconstruction(3D model generation)technique for various anthropometric body part.
 # Abstract
 
-This paper reviews the latest advancements in 3D model generation techniques for anthropometric body parts, emphasizing their significance in sports and health monitoring. We explore the integration of photogrammetry, Neural Radiance Fields (NeRFs), Gaussian splatting, and voxel hashing technologies that facilitate the precise measurement and visualization of body changes. Highlighted applications and tools include Agisoft Metashape, ColMap for photogrammetry; Luma AI, 3DPresso (ReconLabs) for NeRFs; and novel approaches in Gaussian splatting and voxel hashing for scalable real-time 3D reconstruction. The paper also addresses the determination of camera positions for accurate photo capture. By enabling users to overlay meshes on images for comparison and measurement, these technologies represent a leap forward in tracking muscle growth and body dimension changes, offering invaluable tools for athletes and health professionals.
-
+Abstract
+This paper provides an overview of modern 3D model generation in terms of anthropometric body parts' developments, with main attention to develop solutions in sports and health monitoring. The current techniques include the suite of photogrammetry solutions, Neural Radiance Fields, Gaussian splatting, and voxel hashing. Moreover, the paper contains a short notes of the initial applications and tools such as Agisoft Metashape, ColMap - photogrammetry; Luma AI, 3DPresso (from ReconLabs) - NeRFs; and the novel solutions of Gaussian splatting or voxel hashing for the purposes of real-time 3D reconstruction. The determination of camera positions for precise photo capture is also covered in the study. Finally, we will use this techniques in measuring muscle growth and changes in body dimensions by allowing users to overlay meshes on photos for comparison and measurement which will make a significant support for athletes and medical professionals.
 [Triceps - Created by @ChanghunKim with Luma](https://lumalabs.ai/capture/8e4b3f53-1cd5-4f2f-836a-edac41affc77)
 
 # References :
